@@ -11,17 +11,16 @@
 PImage pictureOfRecord;   // This variable will hold your image
 
 // Create a variable to keep track of the image rotation angle. Initialize it to zero.
-
-
+int r = 0;
 // The setup method is run once when the program starts
 void setup() {
   
   // Set the size of your sketch here
-
+  size(600, 600);
   
   pictureOfRecord= loadImage("record.png");  // This loads the image. Change the name if you added a new image.  
   // Resize the pictureOfRecord to be the height and width of the sketch
-  
+  pictureOfRecord.resize(600, 600);
 }
 
 
@@ -29,15 +28,16 @@ void setup() {
 void draw() {
 
   // Call the rotateImage method to rotate the image by the amount of the angle variable
-  
-  image (pictureOfRecord, 0, 0);  //draws the record image after it has been rotated
-  
-  // Increase the angle variable to add more rotation 
-  
-  // Run the program. The record should spin!
-  
-  // Now change the code above, so the record only spins when the mouse is pressed.
+  if (mousePressed) {
+    rotateImage(pictureOfRecord, r);
+    image (pictureOfRecord, 0, 0);  //draws the record image after it has been rotated
     
+    // Increase the angle variable to add more rotation 
+    r+=1;
+    // Run the program. The record should spin!
+    
+    // Now change the code above, so the record only spins when the mouse is pressed.
+  }
 }
 
 /* ONLY DO THIS NEXT PART IF YOUR COMPUTER CAN PLAY SOUNDS FROM JAVA 
