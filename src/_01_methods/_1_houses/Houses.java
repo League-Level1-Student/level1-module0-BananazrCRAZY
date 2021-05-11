@@ -31,7 +31,7 @@ public class Houses {
 				x = 250;
 			} else {
 				Random ran = new Random();
-				x = ran.nextInt(250 - 60);
+				x = ran.nextInt(250 - 60 + 1) + 60;
 			}
 			
 			if (a.equalsIgnoreCase("y")) {
