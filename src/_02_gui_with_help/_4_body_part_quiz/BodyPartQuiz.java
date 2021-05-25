@@ -21,7 +21,7 @@ public class BodyPartQuiz {
 	// package,or if you prefer, get celebrity photos from the Internet,
 	// place them in the recipe package(body_part_quiz), and change the names below.
 
-	String firstImage = "src/_05_body_part_quiz/arnold.jpeg";
+	String firstImage = "src/_02_gui_with_help/_04_body_part_quiz/arnold.jpeg";
 	String secondImage = "src/_05_body_part_quiz/leonardo.jpeg";
 	String thirdImage = "src/_05_body_part_quiz/morgan.jpeg";
 	String fourthImage = "src/_05_body_part_quiz/jack.jpeg";
@@ -63,7 +63,7 @@ public class BodyPartQuiz {
 		// 8. .... repeat 4-7 for all your images.....
 		for (int i = 0; i < 4; i++) {
 			String guess = JOptionPane.showInputDialog("who is this?");
-			if (guess.equalsIgnoreCase("arnold")) {
+			if (guess.equalsIgnoreCase("Arnold")) {
 				JOptionPane.showMessageDialog(null, "Correct");
 				score++;
 			} else
@@ -71,6 +71,7 @@ public class BodyPartQuiz {
 			showNextImage();
 		}
 		// 9. Show them their current score
+		JOptionPane.showMessageDialog(null, "Your Final Score: " + score);
 
 	}
 
