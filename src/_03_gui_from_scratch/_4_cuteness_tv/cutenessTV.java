@@ -6,41 +6,55 @@ import java.net.URI;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
 public class cutenessTV implements ActionListener {
 	JButton duck = new JButton("Duck");
 	JButton frog = new JButton("Frog");
-	JButton fluUni = new JButton("Fluffy Unicorn");
+	JButton uni = new JButton("Fluffy Unicorn");
 	public void cute() {
 		JFrame f = new JFrame();
 		JPanel p = new JPanel();
 
 		p.add(duck);
 		p.add(frog);
-		p.add(fluUni);
+		p.add(uni);
 		f.add(p);
 
 		duck.addActionListener(this);
 		frog.addActionListener(this);
-		fluUni.addActionListener(this);
+		uni.addActionListener(this);
+		
+		f.setVisible(true);
+		f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		f.pack();
 	}
 
 	@Override
-	public void actionPerformed(ActionEvent arg0) {
-		// TODO Auto-generated method stub
+	public void actionPerformed(ActionEvent e) {
+		if(e.getSource() == duck) {
+			showDucks();
+		} else if (e.getSource() == frog) {
+			showFrog();
+		} else if (e.getSource() == uni) {
+			showFluffyUnicorns();
+		}
 		
 	}
 
 	void showDucks() {
+		JOptionPane.showMessageDialog(null, "Duck video here");
 		playVideo("https://www.youtube.com/watch?v=MtN1YnoL46Q");
 	}
 
 	void showFrog() {
+		JOptionPane.showMessageDialog(null, "Frog video here");
 		playVideo("https://www.youtube.com/watch?v=cBkWhkAZ9ds");
 	}
 
 	void showFluffyUnicorns() {
+		JOptionPane.showMessageDialog(null, "Fluffy Unicorn video here");
 		playVideo("https://www.youtube.com/watch?v=a-xWhG4UU_Y");
 	}
 
